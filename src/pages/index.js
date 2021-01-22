@@ -1,6 +1,7 @@
 /**
  * @description 첫페이지 products로
  */
+
 export const getServerSideProps = async ({ res }) => {
   res.setHeader('location', `/products`);
 
