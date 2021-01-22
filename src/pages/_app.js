@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
 export default class RootApp extends App {
   render() {
     const { Component, ...other } = this.props;
+
     return (
       <Container>
         <GlobalStyle />
@@ -30,8 +31,6 @@ export default class RootApp extends App {
         </Head>
         <div>
           <header>
-            <Link href="/">Home</Link>
-            <span>|</span>
             <Link href="/products">Products</Link>
             <span>|</span>
             <Link href="/cart">Cart</Link>
