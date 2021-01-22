@@ -1,10 +1,13 @@
-import App, { Container } from 'next/app';
+import App from 'next/app';
 import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Head from 'next/head';
 import { LayoutHeader } from '../components/Layout/LayoutHeader';
 import { LayoutFooter } from '../components/Layout/LayoutFooter';
 const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+  }
   main {
     display: flex;
     width: 100%;
@@ -30,7 +33,7 @@ export default class RootApp extends App {
   render() {
     const { Component, ...other } = this.props;
     return (
-      <Container>
+      <>
         <GlobalStyle />
         <Head>
           <title>Cart System</title>
@@ -44,7 +47,7 @@ export default class RootApp extends App {
         <footer>
           <LayoutFooter />
         </footer>
-      </Container>
+      </>
     );
   }
 }

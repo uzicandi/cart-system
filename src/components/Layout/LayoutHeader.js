@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
-const HeaderStyle = styled.div`
-  background-color: blue;
-`;
+import { useRouter } from 'next/dist/client/router';
 
 export const LayoutHeader = () => {
+  const router = useRouter();
+  const isCartPage = router.pathname === '/cart';
   return (
     <>
-      <HeaderStyle>
+      {isCartPage ? (
         <Link href="/products">Products</Link>
-        <span>|</span>
+      ) : (
         <Link href="/cart">Cart</Link>
-      </HeaderStyle>
+      )}
     </>
   );
 };
