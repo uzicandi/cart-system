@@ -11,7 +11,7 @@ import ProductListContainer from '../containers/ProductListContainer';
 export default class RootApp extends App {
   render() {
     const { Component, ...other } = this.props;
-    console.log(this);
+    //const store = configureStore();
     return (
       <>
         <Provider store={store}>
