@@ -1,18 +1,17 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { ProductCard } from 'components/Products/ProductCard';
 import { productsActionCreation } from '../store/configureStore';
+import { ProductsList } from 'components/Products/ProductsList';
 
 function ProductListContainer() {
-  const { data } = useSelector(state => state, []);
+  const productList = useSelector(state => state, []);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(productsActionCreation.getProducts());
   }, [dispatch]);
-
-  return <ProductCard data={data} />;
+  return <ProductsList productList={productList} />;
 }
 
 export default ProductListContainer;

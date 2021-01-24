@@ -1,21 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Tooltip } from 'antd';
+import { PriceLabel } from 'components/Label/PriceLabel';
+import { ShoppingCartOutlined } from '@ant-design/icons';
 
-export const ProductCard = () => {
+/**
+ * @description 상품 리스트 페이지에서 사용되는 제품 카드
+ */
+
+export const ProductCard = props => {
+  const { id, title, coverImage, price } = props.product;
   const { Meta } = Card;
+  const [carted, setCarted] = useState(false);
   return (
     <Card
-      style={{ width: 300 }}
+      style={{ width: 300, margin: 10 }}
       cover={
-        <img
-          alt="example"
-          src="https://cdn.class101.net/images/3a25ecd9-d1ab-4d21-8cc1-522ea711e729"
-        />
+        <div style={{ overflow: 'hidden', width: 300, height: 180 }}>
+          <img alt={title} src={coverImage} />
+        </div>
       }
-      actions={[<span>20000원</span>, <span>담기</span>]}
+      actions={[
+        <span>
+          <PriceLabel value={price} strong={true} />
+        </span>,
+        <span style={carted ? { color: '#1890ff', fontWeight: 'bold' } : {}}>
+          <ShoppingCartOutlined style={{ marginRight: '4px' }} />
+          {carted ? '빼기' : '담기'}
+        </span>
+      ]}
     >
-      <Tooltip placement="bottom">
-        <Meta title="title" />
+      <Tooltip placement="bottom" title={title}>
+        <Meta title={title} />
       </Tooltip>
     </Card>
   );

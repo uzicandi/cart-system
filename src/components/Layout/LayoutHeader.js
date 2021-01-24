@@ -9,7 +9,7 @@ import { AppstoreOutlined } from '@ant-design/icons';
 export const LayoutHeader = () => {
   const router = useRouter();
   const { Title } = Typography;
-  const isCartPage = router.pathname === '/cart';
+  const isCartPage = router.pathname === CART_PATH;
   return (
     <>
       <Row>

@@ -6,10 +6,6 @@ function Products() {
   return (
     <>
       <ProductListContainer />
-      {/* <List size="large">
-        {' '}
-        <ProductCard />
-      </List> */}
     </>
   );
 }
