@@ -4,6 +4,7 @@ import { LayoutFooter } from './LayoutFooter';
 import { Layout } from 'antd';
 
 export const LayoutAll = ({ children }) => {
+  console.log({ children });
   const { Header, Footer, Content } = Layout;
   return (
     <Layout style={LayoutStyle}>

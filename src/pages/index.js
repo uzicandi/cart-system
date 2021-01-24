@@ -6,10 +6,8 @@ import { PRODUCTS_LIST_PATH } from '../pages/const';
 
 export const getServerSideProps = async ({ res }) => {
   res.setHeader('location', PRODUCTS_LIST_PATH);
-
   res.statusCode = 302;
   res.end();
-
   return { props: {} };
 };
 

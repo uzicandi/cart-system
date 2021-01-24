@@ -1,13 +1,15 @@
 import React from 'react';
-import { ProductCard } from '../components/Products/ProductCard';
+import ProductListContainer from '../containers/ProductListContainer';
 import { Row, Col, List } from 'antd';
 
 function Products() {
   return (
     <>
-      <List size="large">
+      <ProductListContainer />
+      {/* <List size="large">
+        {' '}
         <ProductCard />
-      </List>
+      </List> */}
     </>
   );
 }

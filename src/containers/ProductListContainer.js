@@ -1,8 +1,11 @@
 import React from 'react';
-import Products from 'pages/products';
+import { productItems } from '../data/productItems';
+import { ProductCard } from 'components/Products/ProductCard';
 
 function ProductListContainer() {
-  return <Products />;
+  const data = productItems;
+  console.log('data', data);
+  return <ProductCard />;
 }
 
 export default ProductListContainer;

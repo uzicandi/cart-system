@@ -1,10 +1,10 @@
 import React from 'react';
-import { CartPage } from '../components/CartPage';
+import CartListContainer from '../containers/CartListContainer';
 
 function Cart() {
   return (
     <>
-      <CartPage />
+      <CartListContainer />
     </>
   );
 }
