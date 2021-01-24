@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col, Typography } from 'antd';
-
+import { PRODUCTS_LIST_PATH, CART_PATH } from '../../pages/const';
 import { useRouter } from 'next/dist/client/router';
 import { HeaderLinkButton } from '../Button/HeaderLinkButton';
 import { ShoppingCartOutlined } from '@ant-design/icons';
@@ -23,13 +23,13 @@ export const LayoutHeader = () => {
         <Col xs={4} sm={12} style={{ textAlign: 'right' }}>
           {isCartPage ? (
             <HeaderLinkButton
-              to="/products"
+              to={PRODUCTS_LIST_PATH}
               icon={<AppstoreOutlined />}
               text="상품목록"
             />
           ) : (
             <HeaderLinkButton
-              to="/cart"
+              to={CART_PATH}
               icon={<ShoppingCartOutlined />}
               text="장바구니"
             />

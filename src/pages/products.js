@@ -1,10 +1,13 @@
 import React from 'react';
-import { ProductsPage } from '../components/ProductsPage';
+import { ProductCard } from '../components/Products/ProductCard';
+import { Row, Col, List } from 'antd';
 
 function Products() {
   return (
     <>
-      <ProductsPage />
+      <List size="large">
+        <ProductCard />
+      </List>
     </>
   );
 }
