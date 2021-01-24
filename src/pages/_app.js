@@ -5,6 +5,7 @@ import { LayoutAll } from 'components/Layout/LayoutAll';
 import 'antd/dist/antd.css';
 import { Provider } from 'react-redux';
 import store from '../modules/store';
+import ProductListContainer from 'containers/ProductListContainer';
 
 export default class RootApp extends App {
   render() {
@@ -16,6 +17,7 @@ export default class RootApp extends App {
           <Head>
             <title>Cart System</title>
           </Head>
+          <ProductListContainer />
           <LayoutAll>
             <Component {...other}></Component>
           </LayoutAll>
